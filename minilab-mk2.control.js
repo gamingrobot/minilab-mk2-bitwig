@@ -3,9 +3,15 @@ loadAPI(6);
 
 // Basic setup.
 host.setShouldFailOnDeprecatedUse(true);
-host.defineController("Arturia", "MiniLab Mk II", "1.0", "2fdbbb1f-f771-43f7-83e8-bc01c3e573de", "bequadro");
+host.defineController("Arturia", "MiniLab Mk II", "1.0", "51b6404a-5583-4cf6-9cdc-d8af0d26aca3", "bequadro");
 host.defineMidiPorts(1, 1);
-host.addDeviceNameBasedDiscoveryPair(["Arturia MiniLab mkII"], ["Arturia MiniLab mkII"]);
+host.addDeviceNameBasedDiscoveryPair([
+	"Arturia MiniLab mkII",
+	"Arturia MiniLab mkII MIDI 1"
+], [
+	"Arturia MiniLab mkII",
+	"Arturia MiniLab mkII MIDI 1"
+]);
 
 // MIDI messages.
 const MIDI_STATUS_PAD_ON = 153;
@@ -39,18 +45,19 @@ function setPadColor(pad, color) {
 	sendSysex("F0 00 20 6B 7F 42 02 00 10 " + padHex + " " + color + " F7");
 }
 
-// Pad color mapping. Notes = white, Control = color.
+// Pad color mapping. Notes = black, Control = color.
 const PAD_COLORS = [
-	COLOR.WHITE,
-	COLOR.WHITE,
-	COLOR.WHITE,
-	COLOR.WHITE,
-	COLOR.WHITE,
-	COLOR.WHITE,
-	COLOR.WHITE,
-	COLOR.WHITE,
-	COLOR.WHITE,
-	COLOR.WHITE,
+	COLOR.BLACK,
+	COLOR.BLACK,
+	COLOR.BLACK,
+	COLOR.BLACK,
+	COLOR.BLACK,
+	COLOR.BLACK,
+	COLOR.BLACK,
+	COLOR.BLACK,
+
+	COLOR.BLUE,
+	COLOR.BLUE,
 	COLOR.BLACK,
 	COLOR.BLACK,
 	COLOR.CYAN,
@@ -84,7 +91,7 @@ function init() {
 	track = host.createCursorTrack(1, 1);
 	device = track.createCursorDevice();
 	macros = device.createCursorRemoteControlsPage(8);
-	
+
 	// Freely assignable controls.
 	ccKnobs = host.createUserControls(6);
 
