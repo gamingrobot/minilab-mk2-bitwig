@@ -5,13 +5,7 @@ loadAPI(6);
 host.setShouldFailOnDeprecatedUse(true);
 host.defineController("Arturia", "MiniLab Mk II", "1.0", "51b6404a-5583-4cf6-9cdc-d8af0d26aca3", "bequadro");
 host.defineMidiPorts(1, 1);
-host.addDeviceNameBasedDiscoveryPair([
-	"Arturia MiniLab mkII",
-	"Arturia MiniLab mkII MIDI 1"
-], [
-	"Arturia MiniLab mkII",
-	"Arturia MiniLab mkII MIDI 1"
-]);
+host.addDeviceNameBasedDiscoveryPair(["Arturia MiniLab mkII"], ["Arturia MiniLab mkII"]);
 
 // MIDI messages.
 const MIDI_STATUS_PAD_ON = 153;
@@ -59,8 +53,8 @@ const PAD_COLORS = [
 	COLOR.BLUE,
 	COLOR.BLUE,
 	COLOR.BLACK,
-	COLOR.BLACK,
 	COLOR.CYAN,
+	COLOR.BLUE,
 	COLOR.GREEN,
 	COLOR.YELLOW,
 	COLOR.RED
@@ -132,8 +126,11 @@ function onMidi(status, data1, data2) {
 			case 9:
 				track.selectNext();
 				break;
-			case 12:
+			case 11:
 				transport.isMetronomeEnabled().toggle();
+				break;
+			case 12:
+				transport.isArrangerLoopEnabled().toggle();
 				break;
 			case 13:
 				transport.play();

@@ -21,8 +21,9 @@
 - Pads 1 to 8 function as normal MIDI notes / drum pads.
 - Pads 9 to 16 (after pressing the pad selector) function as following:
 	- Pad 9 & 10 (blue) – Scroll between tracks.
-	- Pad 11 & 12 – Unassigned.
-	- Pad 13 (cyan) – Toggle metronome.
+	- Pad 11 – Unassigned.
+	- Pad 12 (cyan) – Toggle metronome.
+	- Pad 13 (cyan) – Toggle looping.
 	- Pad 14 (green) – Toggle play/pause.
 	- Pad 15 (yellow) – Stop playback.
 	- Pad 15 (red) – Toggle recording.
