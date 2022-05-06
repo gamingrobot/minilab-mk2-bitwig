@@ -23,7 +23,7 @@
 	- Pad 9 & 10 (blue) – Scroll between tracks.
 	- Pad 11 – Unassigned.
 	- Pad 12 (cyan) – Toggle metronome.
-	- Pad 13 (cyan) – Toggle looping.
+	- Pad 13 (blue) – Toggle looping.
 	- Pad 14 (green) – Toggle play/pause.
 	- Pad 15 (yellow) – Stop playback.
 	- Pad 15 (red) – Toggle recording.
